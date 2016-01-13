@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>/temp/ALS/J127</key>
+	<string>Banshee_FACT_unknown_10.86.123.245_unknown_1.0.19_709.csv</string>
+	<key>/temp/ALS/X109</key>
+	<string>calibration_summary.txt</string>
+	<key>/temp/ALS/X137</key>
+	<string>calibration_summary.csv</string>
+	<key>/temp/ALS/N69</key>
+	<string>calibration_summary.txt</string>
+	<key>/temp/Prox/N56ProxFlex</key>
+	<string>N56ProxFlex_103914.csv</string>
+	<key>/temp/Prox/N66ProxFlex</key>
+	<string>N66ProxFlex_920715.csv</string>
+	<key>/temp/Prox/N71ProxFlex</key>
+	<string>N71ProxFlex_923415.csv</string>
+	<key>/temp/MIC/X35</key>
+	<string>FSAPL85 16-1-5 1.txt</string>
+	<key>/temp/MIC/D10</key>
+	<string>FSAPL85.csv</string>
+</dict>
+</plist>

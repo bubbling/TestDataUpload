@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SettingDlg">
+            <connections>
+                <outlet property="btnBrowse" destination="66f-qI-LZm" id="7qO-Lg-M6J"/>
+                <outlet property="btnBrowseFTP" destination="wvi-93-qdo" id="447-Ws-xKZ"/>
+                <outlet property="btnCheckAgainstCheat" destination="9pT-WL-uc6" id="Q1c-2i-iJ1"/>
+                <outlet property="btnCheckBarcode" destination="dcn-fv-ar1" id="BBB-DO-mLi"/>
+                <outlet property="btnCheckRenameFiles" destination="npS-de-hLO" id="H3o-NT-HHX"/>
+                <outlet property="btnCheckRunStart" destination="WsB-yK-7qG" id="C1g-6D-IWq"/>
+                <outlet property="btnCheckUploadFTP" destination="TPS-gF-Mbd" id="Wtr-KL-i9b"/>
+                <outlet property="btnCloseSetting" destination="RhK-IV-fci" id="439-If-xfR"/>
+                <outlet property="btnFTPTest" destination="CAe-nc-BiP" id="MV4-WI-QWI"/>
+                <outlet property="btnFTPUploadTest" destination="qfo-lu-X6g" id="IZC-36-zdn"/>
+                <outlet property="btnSaveSetting" destination="txa-Xl-KoP" id="tKk-DR-aC6"/>
+                <outlet property="btnTestDatabase" destination="TYk-bb-pFx" id="Tz7-LY-ziJ"/>
+                <outlet property="cmbDataType" destination="PpT-IM-hsn" id="CwN-f5-jQG"/>
+                <outlet property="mtFactoryYade" destination="Zs2-Rs-cBi" id="Zsy-lS-KPR"/>
+                <outlet property="tabView1" destination="Uha-81-I1u" id="geZ-Ug-DtK"/>
+                <outlet property="tableView" destination="c7J-Me-eCb" id="9VU-Vv-UCs"/>
+                <outlet property="txtConnectState" destination="s0I-YL-RzT" id="HC1-WN-nCZ"/>
+                <outlet property="txtDatabaseDB" destination="aiQ-WJ-UAl" id="lne-MA-MAl"/>
+                <outlet property="txtDatabaseID" destination="QA4-Qo-m92" id="gzp-g4-n3y"/>
+                <outlet property="txtDatabaseIP" destination="X0T-SR-AYv" id="iYS-Ry-tQ2"/>
+                <outlet property="txtDatabasePWD" destination="9Tz-7s-NFX" id="J1j-lj-73t"/>
+                <outlet property="txtFTPConnectState" destination="jgM-2a-tCk" id="JZB-JB-PpB"/>
+                <outlet property="txtFTPDir" destination="l3f-3g-5aB" id="Eto-Jb-SRs"/>
+                <outlet property="txtFTPFilePath" destination="yjb-bV-bX7" id="9Yb-Z0-ilF"/>
+                <outlet property="txtFTPID" destination="CTr-Ml-WWG" id="aHY-IR-BE2"/>
+                <outlet property="txtFTPIP" destination="cCj-68-atk" id="t4C-io-Yfa"/>
+                <outlet property="txtFTPPWD" destination="f01-Wk-vYK" id="uxd-Ef-f1H"/>
+                <outlet property="txtFTPPort" destination="SwM-Me-oWl" id="Heh-rw-93D"/>
+                <outlet property="txtFilePath" destination="xQW-nX-Cv3" id="sON-jV-nqb"/>
+                <outlet property="txtMaxLine" destination="amZ-j0-LNE" id="HKv-iS-osn"/>
+                <outlet property="txtPollTime" destination="UIb-dR-x4d" id="fue-Nh-7vN"/>
+                <outlet property="txtStartLine" destination="FUa-i5-xB7" id="XVc-eX-B4b"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="nBR-Wj-Zgf"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="ncJ-Nc-yiW" customClass="TabViewDelegate">
+            <connections>
+                <outlet property="cmbDataType" destination="PpT-IM-hsn" id="vGE-Sf-DNW"/>
+                <outlet property="txtMaxLine" destination="amZ-j0-LNE" id="Wpw-Xo-dgb"/>
+            </connections>
+        </customObject>
+        <window title="设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="417" y="214" width="515" height="293"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1600" height="877"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="515" height="293"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="txa-Xl-KoP">
+                        <rect key="frame" x="236" y="13" width="137" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="125" id="dci-TR-LY8"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="保存" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="reX-CR-c7D">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="close:" target="-2" id="DPj-o3-nlR"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RhK-IV-fci">
+                        <rect key="frame" x="366" y="13" width="130" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="118" id="zG3-L0-9q2"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VU9-Ru-CSf">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="close:" target="-2" id="tH0-eR-MyQ"/>
+                        </connections>
+                    </button>
+                    <tabView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uha-81-I1u">
+                        <rect key="frame" x="-8" y="41" width="531" height="246"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="基本选项" identifier="1" id="m31-FB-cTW">
+                                <view key="view" id="HxE-K7-uey">
+                                    <rect key="frame" x="10" y="33" width="511" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsB-yK-7qG">
+                                            <rect key="frame" x="33" y="170" width="311" height="18"/>
+                                            <buttonCell key="cell" type="check" title="开机启动" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="QL0-mO-Hut">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-fv-ar1">
+                                            <rect key="frame" x="33" y="150" width="311" height="18"/>
+                                            <buttonCell key="cell" type="check" title="检查条码格式" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1zY-ct-X1M">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TPS-gF-Mbd">
+                                            <rect key="frame" x="33" y="130" width="311" height="18"/>
+                                            <buttonCell key="cell" type="check" title="测试数据文件上传到FTP" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7eS-KR-0n8">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9pT-WL-uc6">
+                                            <rect key="frame" x="33" y="110" width="311" height="18"/>
+                                            <buttonCell key="cell" type="check" title="防止“放水” （结束进程）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BqR-WO-2J5">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npS-de-hLO">
+                                            <rect key="frame" x="33" y="90" width="311" height="18"/>
+                                            <buttonCell key="cell" type="check" title="重命名测试数据文件（按天）" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bFc-y6-8cn">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="数据库" identifier="2" id="AOr-xE-6S4">
+                                <view key="view" id="UCK-3e-wy5">
+                                    <rect key="frame" x="10" y="33" width="511" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KjM-uY-iMJ">
+                                            <rect key="frame" x="43" y="171" width="99" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="服务器IP:" id="doT-3Z-cxt">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wh5-87-Eiv">
+                                            <rect key="frame" x="43" y="96" width="99" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="密码:" id="k6w-eP-Jk6">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X0T-SR-AYv">
+                                            <rect key="frame" x="139" y="171" width="164" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="hIW-xh-ouS">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QA4-Qo-m92">
+                                            <rect key="frame" x="139" y="121" width="164" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Ll2-dj-J2J">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tz-7s-NFX">
+                                            <rect key="frame" x="139" y="94" width="164" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="9D1-oe-weK">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCc-Dh-ECz">
+                                            <rect key="frame" x="43" y="121" width="99" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="用户名:" id="vfU-89-XBC">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TYk-bb-pFx">
+                                            <rect key="frame" x="39" y="46" width="131" height="32"/>
+                                            <buttonCell key="cell" type="push" title="测试连接" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hzy-2C-3jX">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="testDB:" target="-2" id="A0b-Dp-Mt8"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiQ-WJ-UAl">
+                                            <rect key="frame" x="139" y="146" width="164" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="ENg-i9-mvB">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0I-YL-RzT">
+                                            <rect key="frame" x="191" y="53" width="237" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Unkown connection state." id="Hlk-qP-kLf">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0U-pD-jRX">
+                                            <rect key="frame" x="43" y="146" width="97" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="数据库名:" id="WIg-Bv-rpn">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zs2-Rs-cBi">
+                                            <rect key="frame" x="344" y="130" width="125" height="58"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="86" height="18"/>
+                                            <size key="intercellSpacing" width="4" height="2"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="1ep-tK-zDu">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="松岗(SZ)" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="tR5-kd-MHf">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="新飞燕(SZ)" imagePosition="left" alignment="left" tag="2" inset="2" id="PMT-gv-X95">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="秦皇岛" imagePosition="left" alignment="left" tag="3" inset="2" id="pM8-Qx-yyR">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                        </matrix>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="本地" identifier="3" id="4r0-u5-jBe">
+                                <view key="view" id="yaE-fx-dO6">
+                                    <rect key="frame" x="10" y="33" width="511" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PpT-IM-hsn">
+                                            <rect key="frame" x="146" y="166" width="300" height="26"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Fdr-Qz-0Wd">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>Prox</string>
+                                                    <string>ALS</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                        </comboBox>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViF-u5-HMX">
+                                            <rect key="frame" x="33" y="173" width="107" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="数据格式:" id="tfX-Ri-6LL">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-cv-l5A">
+                                            <rect key="frame" x="35" y="141" width="105" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="文件路径:" id="r3D-e0-OvU">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQW-nX-Cv3">
+                                            <rect key="frame" x="146" y="62" width="297" height="96"/>
+                                            <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="djl-oE-yhU">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66f-qI-LZm">
+                                            <rect key="frame" x="140" y="26" width="104" height="32"/>
+                                            <buttonCell key="cell" type="push" title="浏览..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DBd-c9-AuW">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="browseFile:" target="-2" id="qu1-kg-Y5G"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="参数" identifier="4" id="w4W-VV-GRP">
+                                <view key="view" id="GCc-jQ-X5Z">
+                                    <rect key="frame" x="10" y="33" width="511" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-dR-x4d">
+                                            <rect key="frame" x="125" y="168" width="96" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="100" drawsBackground="YES" id="hvv-F3-PA4">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUa-i5-xB7">
+                                            <rect key="frame" x="125" y="143" width="96" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="0" drawsBackground="YES" id="f3b-vR-enH">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfb-e2-peG">
+                                            <rect key="frame" x="229" y="168" width="38" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ms" id="R18-kq-idn">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDF-7B-Wlj">
+                                            <rect key="frame" x="23" y="148" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="起始行:" id="zTN-22-9Us">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFR-6x-Yqi">
+                                            <rect key="frame" x="23" y="123" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="输出行：" id="jlc-YW-aDe">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-j0-LNE">
+                                            <rect key="frame" x="125" y="118" width="96" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="1" drawsBackground="YES" id="8bq-hv-kmf">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35F-10-jST">
+                                            <rect key="frame" x="23" y="173" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="读取文件周期:" id="aJj-g9-VsY">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="FTP" identifier="5" id="J0c-qD-Byh">
+                                <view key="view" id="Re7-Ek-8A9">
+                                    <rect key="frame" x="10" y="33" width="511" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Q5-Ch-h6W">
+                                            <rect key="frame" x="39" y="174" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="FTP服务器IP:" id="lqf-hz-dkF">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCj-68-atk">
+                                            <rect key="frame" x="137" y="169" width="225" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="f5t-U0-iDe">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-h1-ZUF">
+                                            <rect key="frame" x="368" y="174" width="68" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="端口:" id="qqX-6a-D9b">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQ3-Rb-sqK">
+                                            <rect key="frame" x="39" y="149" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="用户名:" id="uJD-2f-nBi">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTr-Ml-WWG">
+                                            <rect key="frame" x="137" y="144" width="324" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="nBG-ek-8ko">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Czi-8w-6XC">
+                                            <rect key="frame" x="39" y="124" width="107" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="密码:" id="1FX-g8-9mp">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f01-Wk-vYK">
+                                            <rect key="frame" x="137" y="119" width="324" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="1oj-at-bgI">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1d7-9g-Ujg">
+                                            <rect key="frame" x="39" y="97" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="FTP根目录:" id="jJL-ZX-AmH">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-3g-5aB">
+                                            <rect key="frame" x="137" y="95" width="324" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="T2s-b1-ABE">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAe-nc-BiP">
+                                            <rect key="frame" x="35" y="30" width="121" height="32"/>
+                                            <buttonCell key="cell" type="push" title="测试连接" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UPC-y5-PNW">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="testFTP:" target="-2" id="c4h-rd-fmr"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgM-2a-tCk">
+                                            <rect key="frame" x="169" y="41" width="294" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Unkown connection state." id="dTF-lS-3pS">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvi-93-qdo">
+                                            <rect key="frame" x="364" y="62" width="103" height="32"/>
+                                            <buttonCell key="cell" type="push" title="浏览..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i7d-z7-W5m">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="browseFTPFile:" target="-2" id="Yge-as-SEf"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-Tm-TUc">
+                                            <rect key="frame" x="39" y="74" width="100" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="文件路径:" id="bqV-kw-vuz">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjb-bV-bX7">
+                                            <rect key="frame" x="138" y="69" width="224" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="rel-DT-5v2">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-Me-oWl">
+                                            <rect key="frame" x="409" y="171" width="52" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="21" placeholderString="" drawsBackground="YES" id="jCa-2i-dis">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfo-lu-X6g">
+                                            <rect key="frame" x="35" y="5" width="121" height="32"/>
+                                            <buttonCell key="cell" type="push" title="测试上传" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tMv-Kk-D0a">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="testFTPUpload:" target="-2" id="n0T-KL-aVp"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="进程" identifier="6" id="2ar-qg-iaK">
+                                <view key="view" id="Ucl-r4-rqx">
+                                    <rect key="frame" x="10" y="33" width="511" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D5p-un-Apa">
+                                            <rect key="frame" x="40" y="174" width="430" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="需要结束的进程添加到下表中:" id="MXm-H7-GhP">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rLC-eO-A1N">
+                                            <rect key="frame" x="42" y="14" width="32" height="23"/>
+                                            <buttonCell key="cell" type="smallSquare" title="添加" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QyN-7K-2wv">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="addTableRow:" target="-2" id="t1u-68-8Nh"/>
+                                            </connections>
+                                        </button>
+                                        <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwi-Fi-KV8">
+                                            <rect key="frame" x="42" y="41" width="426" height="126"/>
+                                            <clipView key="contentView" wantsLayer="YES" id="4AI-lE-UwW">
+                                                <rect key="frame" x="1" y="0.0" width="238" height="134"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="xag-mJ-Mvk" id="c7J-Me-eCb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="424" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                        <tableColumns>
+                                                            <tableColumn width="76.07421875" minWidth="40" maxWidth="1000" id="fqJ-B8-1mQ">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="glJ-b8-Hfd">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                            </tableColumn>
+                                                            <tableColumn width="342" minWidth="40" maxWidth="1000" id="4sb-xM-AvE">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="wmb-r0-9yN">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                            </tableColumn>
+                                                        </tableColumns>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="-2" id="Hqh-9D-Jvx"/>
+                                                            <outlet property="delegate" destination="-2" id="UAz-9W-4DJ"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="h6Q-WJ-THR">
+                                                <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="eqB-om-Qws">
+                                                <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <tableHeaderView key="headerView" id="xag-mJ-Mvk">
+                                                <rect key="frame" x="0.0" y="0.0" width="238" height="17"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </tableHeaderView>
+                                        </scrollView>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mtq-lF-tRE">
+                                            <rect key="frame" x="82" y="14" width="32" height="23"/>
+                                            <buttonCell key="cell" type="smallSquare" title="删除" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4lo-35-Z3H">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="deleteTableRow:" target="-2" id="elk-5m-KUa"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rLC-eO-A1N" firstAttribute="baseline" secondItem="mtq-lF-tRE" secondAttribute="baseline" id="82K-ML-igZ"/>
+                                        <constraint firstItem="Bwi-Fi-KV8" firstAttribute="top" secondItem="D5p-un-Apa" secondAttribute="bottom" constant="7" id="HGn-5a-CpE"/>
+                                        <constraint firstItem="D5p-un-Apa" firstAttribute="leading" secondItem="Bwi-Fi-KV8" secondAttribute="leading" id="UJf-YI-N7b"/>
+                                        <constraint firstItem="D5p-un-Apa" firstAttribute="leading" secondItem="Ucl-r4-rqx" secondAttribute="leading" constant="42" id="UnB-1C-r5o"/>
+                                        <constraint firstItem="D5p-un-Apa" firstAttribute="top" secondItem="Ucl-r4-rqx" secondAttribute="top" constant="9" id="dS8-8b-2bk"/>
+                                        <constraint firstAttribute="bottom" secondItem="rLC-eO-A1N" secondAttribute="bottom" constant="15" id="hsi-TW-fbk"/>
+                                        <constraint firstItem="D5p-un-Apa" firstAttribute="trailing" secondItem="Bwi-Fi-KV8" secondAttribute="trailing" id="kFg-ut-aad"/>
+                                        <constraint firstItem="D5p-un-Apa" firstAttribute="centerX" secondItem="Ucl-r4-rqx" secondAttribute="centerX" id="o9P-N2-sYU"/>
+                                        <constraint firstItem="mtq-lF-tRE" firstAttribute="leading" secondItem="rLC-eO-A1N" secondAttribute="trailing" constant="8" symbolic="YES" id="sib-ZD-ARy"/>
+                                        <constraint firstItem="rLC-eO-A1N" firstAttribute="leading" secondItem="Bwi-Fi-KV8" secondAttribute="leading" id="tga-er-eoK"/>
+                                        <constraint firstItem="mtq-lF-tRE" firstAttribute="top" secondItem="Bwi-Fi-KV8" secondAttribute="bottom" constant="5" id="yXi-oq-0yd"/>
+                                    </constraints>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                        <connections>
+                            <outlet property="delegate" destination="ncJ-Nc-yiW" id="7YZ-5H-g0D"/>
+                        </connections>
+                    </tabView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RhK-IV-fci" firstAttribute="baseline" secondItem="txa-Xl-KoP" secondAttribute="baseline" id="C8e-tu-E0G"/>
+                    <constraint firstAttribute="trailing" secondItem="Uha-81-I1u" secondAttribute="trailing" constant="-1" id="JOk-FP-woH"/>
+                    <constraint firstItem="Uha-81-I1u" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="-1" id="KQ8-Ge-Qgj"/>
+                    <constraint firstItem="txa-Xl-KoP" firstAttribute="top" secondItem="Uha-81-I1u" secondAttribute="bottom" constant="10" id="a9e-Ci-F4g"/>
+                    <constraint firstAttribute="trailing" secondItem="RhK-IV-fci" secondAttribute="trailing" constant="25" id="dIY-x0-GRN"/>
+                    <constraint firstItem="RhK-IV-fci" firstAttribute="leading" secondItem="txa-Xl-KoP" secondAttribute="trailing" constant="5" id="drb-7I-J8B"/>
+                    <constraint firstItem="Uha-81-I1u" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="12" symbolic="YES" id="nvs-Ln-65c"/>
+                    <constraint firstAttribute="bottom" secondItem="txa-Xl-KoP" secondAttribute="bottom" constant="20" symbolic="YES" id="pKG-ml-dU2"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="177.5" y="-465.5"/>
+        </window>
+    </objects>
+</document>
